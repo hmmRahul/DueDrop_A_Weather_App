@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/swipeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
+
+
+        <EditText
+            android:id="@+id/search_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_inp"
+            android:drawableStart="@drawable/location"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Search for new location"
+            android:imeOptions="actionSearch"
+            android:inputType="textPersonName"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search_box"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="45dp"
+            android:layout_toRightOf="@+id/weatherIcon"
+            android:fontFamily="@font/ubuntu_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/maxmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/temperature"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/weatherIcon"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/weatherIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/search_box"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp" />
+
+
+        <TextView
+            android:id="@+id/weatherDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/maxmin"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/weatherIcon"
+            android:fontFamily="@font/ubuntu_medium"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/gridLayout"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/ubuntu"
+            android:includeFontPadding="false"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/lastUpdated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/gridLayout"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/ubuntu"
+            android:includeFontPadding="false"
+            android:textColor="@color/white" />
+<TextView
+    android:id="@+id/noConnectionText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@id/gridLayout"
+    android:visibility="invisible"
+    android:layout_centerInParent="true"
+    android:textColor="@color/white"
+    android:fontFamily="@font/ubuntu_medium"/>
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:columnCount="2"
+            android:padding="10dp"
+            android:visibility="invisible"
+            android:rowCount="2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/humidityCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/humidityCardIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/humidity" />
+
+                    <TextView
+                        android:id="@+id/humidityCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/humidityCardIcon"
+                        android:fontFamily="@font/ubuntu"
+                        android:includeFontPadding="false"
+                        android:text="Humidity"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/humidityCardValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/humidityCardText"
+                        android:layout_toRightOf="@+id/humidityCardIcon"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:text="90%"
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pressureCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/pressureCardIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/pressure" />
+
+                    <TextView
+                        android:id="@+id/pressureCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/pressureCardIcon"
+                        android:fontFamily="@font/ubuntu"
+                        android:includeFontPadding="false"
+                        android:text="Pressure"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pressureCardValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pressureCardText"
+                        android:layout_toRightOf="@+id/pressureCardIcon"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:text="1000"
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/pressureCardValue"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/pressureCardValue"
+                        android:paddingStart="8dp"
+                        android:text="mBar"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/windCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/windCardIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/wind" />
+
+                    <TextView
+                        android:id="@+id/windCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/windCardIcon"
+                        android:fontFamily="@font/ubuntu"
+                        android:includeFontPadding="false"
+                        android:text="Wind"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/windCardValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/windCardText"
+                        android:layout_toRightOf="@+id/windCardIcon"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:text="4"
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/windCardValue"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/windCardValue"
+                        android:paddingStart="8dp"
+                        android:text="km/hr"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/visibilityCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/visibilityCardIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/sunrise" />
+
+                    <TextView
+                        android:id="@+id/visibilityCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/visibilityCardIcon"
+                        android:fontFamily="@font/ubuntu"
+                        android:includeFontPadding="false"
+                        android:text="Visibility"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/visibilityCardValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/visibilityCardText"
+                        android:layout_toRightOf="@+id/visibilityCardIcon"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:text="4"
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/visibilityCardValue"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/visibilityCardValue"
+                        android:paddingStart="8dp"
+                        android:text="km"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/sunriseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="80dp"
+            android:fontFamily="@font/ubuntu"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/sunsetText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="80dp"
+            android:fontFamily="@font/ubuntu"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:theme="@style/ProgressBarTheme"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
