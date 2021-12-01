@@ -2,7 +2,7 @@ package com.hmmrahul.duedrop.models;
 
 public class AppKeyStore {
 
-    static String appid = "337b87cfcbee5247eff3ce28e9c3d918";
+    static String appid = "Enter your api id here";
 
     public static String getAppid() {
         return appid;
