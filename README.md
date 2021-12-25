@@ -11,7 +11,9 @@
 This Project is completed.
 
 ## **Project Screen Shot(s)**
-<a href="https://ibb.co/JtJQYM0"><img src="https://i.ibb.co/JtJQYM0/Screenshot-20211225-203027.png" alt="Screenshot-20211225-203027" border="0"></a>
+
+<img  align = "left" width="250" height="600" src="https://i.postimg.cc/R0PdhP50/Screenshot-20211225-203027.png">
+
 
 
 
