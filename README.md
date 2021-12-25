@@ -11,7 +11,7 @@
 This Project is completed.
 
 ## **Project Screen Shot(s)**
-<img  align = "left" width="300" height="600" src="https://i.ibb.co/JtJQYM0/Screenshot-20211225-203027.png">
+<img  align = "left" width="700" height="500" src="https://i.ibb.co/JtJQYM0/Screenshot-20211225-203027.png">
 
 
 
